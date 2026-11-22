@@ -1,0 +1,2 @@
+# osis.smanca
+OSIS. Smanca
