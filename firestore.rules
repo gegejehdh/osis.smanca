@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // GANTI dengan email admin OSIS (akun yang dibuat di Firebase Authentication)
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email in ['GANTI_DENGAN_EMAIL_ADMIN@gmail.com'];
+    }
+
+    // Konten website: semua orang boleh membaca, hanya admin yang boleh mengubah
+    match /{col}/{id} {
+      allow read: if col in ['news','programs','activities','gallery','members','settings'];
+      allow write: if isAdmin() && col in ['news','programs','activities','gallery','members','settings'];
+    }
+
+    // Aspirasi: siswa hanya boleh mengirim; hanya admin yang boleh membaca/mengubah/menghapus
+    match /aspirations/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['kelas','kat','sub','isi','status','at','nama'])
+        && request.resource.data.sub is string && request.resource.data.sub.size() <= 100
+        && request.resource.data.isi is string && request.resource.data.isi.size() <= 2000;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Penghitung jumlah aspirasi (tampil di beranda)
+    match /stats/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.n == 1;
+      allow update: if request.resource.data.n == resource.data.n + 1 || isAdmin();
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "settings": {
+    "main": {
+      "name": "OSIS UPTD SMAN 1 CAMPALAGIAN",
+      "school": "UPTD SMAN 1 CAMPALAGIAN",
+      "desc": "Organisasi Siswa Intra Sekolah: wadah kepemimpinan, kreativitas, dan kolaborasi siswa.",
+      "addr": "[Alamat sekolah]",
+      "email": "osis@contoh.sch.id",
+      "ig": "@osis_contoh",
+      "wa": "[Nomor WhatsApp]",
+      "sec": "[Lokasi & jam sekretariat]",
+      "vision": "Mewujudkan organisasi siswa yang aktif, kreatif, disiplin, dan berintegritas.",
+      "mission": "Meningkatkan partisipasi siswa dalam kegiatan positif\nMendorong kepemimpinan dan kolaborasi\nMenyelenggarakan program kerja yang inovatif dan terukur\nMenjadi jembatan komunikasi siswa, guru, dan sekolah",
+      "history": "[Tuliskan sejarah singkat berdirinya OSIS di sekolah Anda melalui Dashboard Admin → Pengaturan.]",
+      "values": "Integritas\nKolaborasi\nKreativitas\nTanggung Jawab"
+    }
+  },
+  "news": {
+    "news-d1": {
+      "title": "Contoh Berita: Pelantikan Pengurus Baru",
+      "type": "Berita",
+      "cat": "Organisasi",
+      "date": "2026-07-20",
+      "body": "Ini adalah contoh isi berita. Ganti melalui Dashboard Admin."
+    },
+    "news-d2": {
+      "title": "Contoh Pengumuman: Open Recruitment Anggota",
+      "type": "Pengumuman",
+      "cat": "Pengumuman",
+      "date": "2026-08-02",
+      "body": "Contoh pengumuman. Ubah atau hapus melalui Dashboard Admin."
+    },
+    "news-d3": {
+      "title": "Contoh Berita: Lomba Kebersihan Kelas",
+      "type": "Berita",
+      "cat": "Kegiatan",
+      "date": "2026-09-05",
+      "body": "Contoh isi berita kedua."
+    }
+  },
+  "programs": {
+    "programs-d1": {
+      "name": "Masa Pengenalan Organisasi",
+      "field": "Kaderisasi",
+      "desc": "Orientasi calon pengurus dan anggota.",
+      "goal": "Menumbuhkan jiwa kepemimpinan.",
+      "pic": "[Koordinator Bidang]",
+      "time": "Semester 1",
+      "status": "Selesai"
+    },
+    "programs-d2": {
+      "name": "Bakti Sosial Sekolah",
+      "field": "Sosial",
+      "desc": "Kegiatan peduli lingkungan dan sesama.",
+      "goal": "Meningkatkan kepedulian sosial.",
+      "pic": "[Koordinator Bidang]",
+      "time": "Semester 2",
+      "status": "Sedang Berjalan"
+    },
+    "programs-d3": {
+      "name": "Pekan Seni dan Olahraga",
+      "field": "Minat Bakat",
+      "desc": "Ajang kreativitas dan sportivitas siswa.",
+      "goal": "Menyalurkan minat dan bakat.",
+      "pic": "[Koordinator Bidang]",
+      "time": "Semester 2",
+      "status": "Direncanakan"
+    }
+  },
+  "activities": {
+    "activities-d1": {
+      "name": "Rapat Kerja OSIS",
+      "date": "2026-08-10",
+      "time": "08:00",
+      "place": "[Lokasi]",
+      "desc": "Penyusunan program kerja satu periode.",
+      "status": "Selesai"
+    },
+    "activities-d2": {
+      "name": "Jumat Bersih",
+      "date": "2026-12-04",
+      "time": "07:00",
+      "place": "[Lokasi]",
+      "desc": "Gotong royong membersihkan lingkungan sekolah.",
+      "status": "Direncanakan"
+    }
+  },
+  "gallery": {
+    "gallery-d1": {
+      "title": "Contoh Dokumentasi Upacara",
+      "kind": "Foto",
+      "cat": "Upacara"
+    },
+    "gallery-d2": {
+      "title": "Contoh Dokumentasi Rapat",
+      "kind": "Foto",
+      "cat": "Rapat"
+    },
+    "gallery-d3": {
+      "title": "Contoh Video Profil OSIS",
+      "kind": "Video",
+      "cat": "Profil"
+    },
+    "gallery-d4": {
+      "title": "Contoh Dokumentasi Bakti Sosial",
+      "kind": "Foto",
+      "cat": "Sosial"
+    }
+  },
+  "members": {
+    "members-d1": {
+      "name": "[Nama Pembina]",
+      "role": "Pembina OSIS",
+      "grp": "Pembina",
+      "desc": "Guru pembina OSIS."
+    },
+    "members-d2": {
+      "name": "[Nama Ketua]",
+      "role": "Ketua OSIS",
+      "grp": "Inti",
+      "desc": "Memimpin organisasi."
+    },
+    "members-d3": {
+      "name": "[Nama Wakil]",
+      "role": "Wakil Ketua",
+      "grp": "Inti",
+      "desc": "Mendampingi ketua."
+    },
+    "members-d4": {
+      "name": "[Nama Sekretaris 1]",
+      "role": "Sekretaris 1",
+      "grp": "Inti",
+      "desc": "Administrasi organisasi."
+    },
+    "members-d5": {
+      "name": "[Nama Sekretaris 2]",
+      "role": "Sekretaris 2",
+      "grp": "Inti",
+      "desc": "Membantu administrasi organisasi."
+    },
+    "members-d6": {
+      "name": "[Nama Bendahara 1]",
+      "role": "Bendahara 1",
+      "grp": "Inti",
+      "desc": "Mengelola keuangan."
+    },
+    "members-d7": {
+      "name": "[Nama Bendahara 2]",
+      "role": "Bendahara 2",
+      "grp": "Inti",
+      "desc": "Membantu mengelola keuangan."
+    },
+    "members-d8": {
+      "name": "[Nama Anggota]",
+      "role": "Anggota OSIS",
+      "grp": "Anggota",
+      "desc": "Anggota OSIS."
+    },
+    "members-d9": {
+      "name": "[Nama Anggota]",
+      "role": "Anggota OSIS",
+      "grp": "Anggota",
+      "desc": "Anggota OSIS."
+    },
+    "members-d10": {
+      "name": "[Nama Anggota]",
+      "role": "Anggota OSIS",
+      "grp": "Anggota",
+      "desc": "Anggota OSIS."
+    }
+  },
+  "stats": {
+    "asp": {
+      "n": 0
+    }
+  }
+}
