@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email in ['gerilsuardi24@gmail.com'];
+    }
+
+    match /{col}/{id} {
+      allow read: if col in ['news','programs','activities','gallery','members','settings'];
+      allow write: if isAdmin() && col in ['news','programs','activities','gallery','members','settings'];
+    }
+
+    // ===== BARU: cabang lomba =====
+    // Publik hanya boleh membaca lomba yang sudah dipublikasikan.
+    match /competitions/{id} {
+      allow read: if resource.data.pub == 'Dipublikasikan' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // ===== BARU: pendaftaran lomba =====
+    // Publik hanya boleh membuat (tidak bisa membaca/mengubah). Daftar ganda otomatis ditolak
+    // karena ID dokumen dibuat dari lomba + nama/tim + kelas, dan publik tidak boleh update.
+    match /registrations/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['comp','act','nama','kelas','wa','tim','anggota','at'])
+        && request.resource.data.keys().hasAll(['comp','act','nama','kelas','at'])
+        && request.resource.data.comp is string
+        && request.resource.data.nama is string && request.resource.data.nama.size() <= 60
+        && request.resource.data.kelas is string && request.resource.data.kelas.size() <= 10
+        && (!('wa' in request.resource.data) || request.resource.data.wa.size() <= 20)
+        && (!('tim' in request.resource.data) || request.resource.data.tim.size() <= 60)
+        && (!('anggota' in request.resource.data) || request.resource.data.anggota.size() <= 1000);
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /aspirations/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['kelas','kat','sub','isi','status','at','nama'])
+        && request.resource.data.sub is string && request.resource.data.sub.size() <= 100
+        && request.resource.data.isi is string && request.resource.data.isi.size() <= 2000;
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /stats/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.n == 1;
+      allow update: if request.resource.data.n == resource.data.n + 1 || isAdmin();
+    }
+  }
+}
